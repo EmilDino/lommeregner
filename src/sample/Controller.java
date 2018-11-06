@@ -22,14 +22,25 @@ public class Controller {
         talDisplay.clear();
         System.out.println(s + " er nu tilføjet");
 
-        for (String number: numbersArray) {
-            resultat += Integer.parseInt(number);
+        try {
+            for (String number : numbersArray) {
+                System.out.println(number);
+                resultat += Integer.parseInt(number);
+            }
         }
+        catch (NumberFormatException e) {
+            System.out.println("OBS NumberFormatExeption " + e.getCause() + e.getMessage());
+        }
+        catch (Exception e) {
+
+        }
+
         System.out.println(resultat);
         talDisplay.setText(Integer.toString(resultat));
+
     }
 
-    // denne Methode styrer plus knappen som lægger tallende sammen 
+    // denne Methode styrer plus knappen som lægger tallende sammen
     public void plusmetode(ActionEvent actionEvent) {
         String s = talDisplay.getText();
         System.out.println("Plusknappen virker");
