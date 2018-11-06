@@ -22,6 +22,7 @@ public class Controller {
         talDisplay.clear();
         System.out.println(s + " er nu tilføjet");
 
+        // sørger for at systemet ikke bryder ned hvis der er en runtime error
         try {
             for (String number : numbersArray) {
                 System.out.println(number);
